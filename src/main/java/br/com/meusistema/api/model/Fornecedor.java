@@ -3,12 +3,14 @@ package br.com.meusistema.api.model;
 import br.com.meusistema.api.enums.TipoFornecedorEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "fornecedor")
@@ -19,8 +21,8 @@ public class Fornecedor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome_fantasia", nullable = false, length = 100)
-    private String nomeFantasia;
+    @Column(name = "nome", nullable = false, length = 100)
+    private String nome;
 
     @Column(name = "email", nullable = false, length = 100)
     private String email;
